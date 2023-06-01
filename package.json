@@ -8,13 +8,12 @@
     "lint:fix": "node node_modules/eslint/bin/eslint.js ./src --fix",
     "eslint": "eslint",
     "task1": "node ./src/01-strings-tasks",
-    "task2": "node ./src/02-numbers-tests",
-    "task3": "node ./src/03-arrays-tests"
+    "task2": "node ./src/02-numbers-tasks",
+    "task3": "node ./src/03-arrays-tasks"
   },
   "author": "aorgish, mikhama",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^6.8.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
@@ -23,5 +22,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mikhama/core-js-101.git"
-  }
+  },
+  "dependencies": {}
 }

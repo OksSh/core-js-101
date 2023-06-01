@@ -140,7 +140,7 @@ function removeFirstOccurrences(string, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(tagString) {
-  return tagString.slice(1, tagString.length-1)
+  return tagString.slice(1, tagString.length - 1);
 }
 
 /**
@@ -153,8 +153,8 @@ function unbracketTag(tagString) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-  
+function convertToUpperCase(string) {
+  return string.toUpperCase();
 }
 
 /**
@@ -172,8 +172,16 @@ function convertToUpperCase(/* str */) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(string) {
+  let arrayFromString = string.split('').map((item) => {
+    if (item == ';') {
+      item = ' ';
+    }
+
+    return item;
+  });
+
+  return arrayFromString.join('').split(' ');
 }
 
 /**
@@ -199,8 +207,24 @@ function extractEmails(/* str */) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleString(width, height) {
+  let array = [];
+
+  for (let i = 0; i < height; i++) {
+    switch (i.toString()) {
+      case '0':
+        array.push(`┌${'─'.repeat(width - 2)}┐\n`);
+        break;
+      case `${height - 1}`:
+        array.push(`└${'─'.repeat(width - 2)}┘\n`);
+        break;
+      default:
+        array.push(`│${' '.repeat(width - 2)}│\n`);
+        break;
+    }
+  }
+
+  return array.join('');
 }
 
 /**
@@ -236,8 +260,8 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  return typeof value === 'string' || value instanceof String ? true : false;
 }
 
 /**
